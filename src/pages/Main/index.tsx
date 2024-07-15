@@ -1,11 +1,16 @@
 import Sidebar from "../../components/Sidebar";
 import { Container } from "./styles";
+import logoImg from "../../assets/logo.svg";
+import { Outlet } from "react-router-dom";
 
 const index = () => {
   return (
     <Container>
       <Sidebar />
-      <h1>Main</h1>
+      <section>
+        <img src={logoImg} alt="logo" />
+        <Outlet />
+      </section>
     </Container>
   );
 };
