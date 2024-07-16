@@ -1,5 +1,7 @@
+import Head from "../../../components/Head";
+
 const Burgers = () => {
-  return <h1>Burgers</h1>;
+  return <Head title="Hambúrgueres" description="Nossos melhores burgues" />;
 };
 
 export default Burgers;
