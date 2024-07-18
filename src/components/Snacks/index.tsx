@@ -6,7 +6,7 @@ interface SnacksProps {
   snacks: any[];
 }
 
-const Snacks = ({ snacks }: SnacksProps) => {
+export default function Snacks({ snacks }: SnacksProps) {
   return (
     <Container>
       {snacks.map((snack) => (
@@ -24,6 +24,4 @@ const Snacks = ({ snacks }: SnacksProps) => {
       ))}
     </Container>
   );
-};
-
-export default Snacks;
+}

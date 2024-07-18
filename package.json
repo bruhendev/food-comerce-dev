@@ -13,6 +13,7 @@
   "dependencies": {
     "@svgx/vite-plugin-react": "^1.0.1",
     "axios": "^1.7.2",
+    "dotenv": "^16.4.5",
     "polished": "^4.3.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -22,6 +23,7 @@
     "styled-normalize": "^8.1.1"
   },
   "devDependencies": {
+    "@types/node": "^20.14.11",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@typescript-eslint/eslint-plugin": "^7.13.1",
