@@ -3,14 +3,17 @@ import { Theme } from "./styles/Theme";
 import { GlobalStyle } from "./styles/global";
 import { AppRoutes } from "./routes";
 import { Normalize } from "styled-normalize";
+import { SnackProvider } from "./contexts/SnackContext";
 
 function App() {
   return (
     <BrowserRouter>
       <Theme>
-        <AppRoutes />
-        <GlobalStyle />
-        <Normalize />
+        <SnackProvider>
+          <AppRoutes />
+          <GlobalStyle />
+          <Normalize />
+        </SnackProvider>
       </Theme>
     </BrowserRouter>
   );
