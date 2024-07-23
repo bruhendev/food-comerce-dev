@@ -4,15 +4,18 @@ import { GlobalStyle } from "./styles/global";
 import { AppRoutes } from "./routes";
 import { Normalize } from "styled-normalize";
 import { SnackProvider } from "./contexts/SnackContext";
+import { CartProvider } from "./contexts/CartContext";
 
 function App() {
   return (
     <BrowserRouter>
       <Theme>
         <SnackProvider>
-          <AppRoutes />
-          <GlobalStyle />
-          <Normalize />
+          <CartProvider>
+            <AppRoutes />
+            <GlobalStyle />
+            <Normalize />
+          </CartProvider>
         </SnackProvider>
       </Theme>
     </BrowserRouter>
