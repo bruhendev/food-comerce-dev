@@ -1,27 +1,16 @@
 import { createContext, ReactNode, useState } from "react";
 import { SnackData } from "../interfaces/SnackData";
+import { toast } from "react-toastify";
+import { snackEmoji } from "../helpers/snackEmoji";
 
 interface Snack extends SnackData {
   quantity: number;
   subtotal: number;
 }
 
-// interface RemoveSnackFromCart {
-//   id: number;
-//   snack: string;
-// }
-
-// interface UpdateCartProps {
-//   id: number;
-//   snack: string;
-//   newQuantity: number;
-// }
-
 export interface CartContextProps {
   cart: Snack[];
   addSnackIntoCart: (snack: SnackData) => void;
-  // removeSnackFromCart: ({ id, snack }: RemoveSnackFromCart) => void;
-  // updateCart: ({ id, snack, newQuantity }: UpdateCartProps) => void;
 }
 
 interface CartProviderProps {
@@ -49,7 +38,11 @@ export function CartProvider({ children }: CartProviderProps) {
         return item;
       });
 
-      console.log(`new Cart - atualização`, newCart);
+      toast.success(
+        `Outro(a) ${snackEmoji(snack.snack)} ${
+          snack.name
+        } adicionado nos pedidos!`
+      );
       setCart(newCart);
 
       return;
@@ -58,7 +51,9 @@ export function CartProvider({ children }: CartProviderProps) {
     const newSnack = { ...snack, quantity: 1, subtotal: snack.price };
     const newCart = [...cart, newSnack];
 
-    console.log(`new Cart`, newCart);
+    toast.success(
+      `${snackEmoji(snack.snack)} ${snack.name} adicionado nos pedidos!`
+    );
 
     setCart(newCart);
   }
